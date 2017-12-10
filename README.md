@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
 
 #### Android
 
-![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/android.jpg?raw=true)
+![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/android.png?raw=true)
 
 #### iOS
 
