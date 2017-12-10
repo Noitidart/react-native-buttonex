@@ -47,7 +47,6 @@ class Button extends Component<Props, State> {
             textStyles.push(styles.textDisabled);
             if (bordered) {
                 buttonStyles.push(styles.buttonBordered, styles.buttonBorderedDisabled);
-                if (isIOS) textStyles.push(styles.textBorderedDisabledIOS);
             }
             if (isAndroid) {
                 if (transparent) buttonStyles.push(styles.buttonTransparentDisabledAndroid);
@@ -58,14 +57,13 @@ class Button extends Component<Props, State> {
             }
             if (bordered && !(isAndroid && transparent)) {
                 buttonStyles.push(styles.buttonBordered);
-                if (isIOS) textStyles.push(styles.textBordered); // dont push if isAndroid because textBordered will give it color
             }
             if (color) {
                 if (bordered) buttonStyles.push({ borderColor:color });
                 if (isIOS || (isAndroid && (transparent || bordered))) textStyles.push({ color });
                 else if (!transparent) buttonStyles.push({ backgroundColor:color }); // isAndroid on this line
             } else {
-                if (isAndroid && (transparent || bordered)) textStyles.push(styles.textBordered); // textBordered only has color on android
+                if (isAndroid && (transparent || bordered)) textStyles.push(styles.textBorderedOrTransparentedAndroid);
             }
             if (noShadow && isAndroid && !bordered && !transparent) {
                 buttonStyles.push(styles.buttonUnelevatedAndroid);
@@ -74,6 +72,9 @@ class Button extends Component<Props, State> {
 
         if (bold && isIOS) {
             textStyles.push(styles.textBold);
+        }
+        if (bordered && isIOS) {
+            textStyles.push(styles.textBorderedIOS);
         }
 
         const formattedTitle = isAndroid ? title.toUpperCase() : title;
@@ -104,7 +105,7 @@ class Button extends Component<Props, State> {
     activateIOS = () => {
         const { activeAnim } = this.state;
         activeAnim.stopAnimation();
-        Animated.timing(activeAnim, { toValue:1, duration:200, useNativeDriver:true }).start();
+        Animated.timing(activeAnim, { toValue:1, duration:100, useNativeDriver:true }).start();
     }
     deactivateIOS = () => {
         const { activeAnim } = this.state;

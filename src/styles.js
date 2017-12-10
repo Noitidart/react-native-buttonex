@@ -55,14 +55,12 @@ const styles = StyleSheet.create({
         },
         android: undefined
     }),
-    textBordered: Platform.select({
-        ios: {
-            paddingVertical: 12 // link3918
-        },
-        android: {
-            color: '#2196F3'
-        }
-    }),
+    textBorderedIOS: {
+        paddingVertical: 12 // link81919
+    },
+    textBorderedOrTransparentedAndroid: {
+        color: '#2196F3'
+    },
     buttonDisabled: Platform.select({
         ios: undefined,
         android: {
@@ -91,11 +89,8 @@ const styles = StyleSheet.create({
         }
     }),
     textBorderedActiveIOS: {
-        paddingVertical: 12, // link3918
+        paddingVertical: 12, // link81919
         color: '#FFFFFF'
-    },
-    textBorderedDisabledIOS: {
-        paddingVertical: 12 // link3918
     },
     buttonBorderedActiveIOS: {
         position: 'absolute',
