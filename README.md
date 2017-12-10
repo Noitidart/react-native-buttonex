@@ -86,8 +86,10 @@ const styles = StyleSheet.create({
 
 #### Android
 
-![](https://i.imgur.com/VgLAa46.png)
+![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/android.jpg?raw=true)
 
 #### iOS
 
-![](https://i.imgur.com/AtBFtED.jpg)
+Bordered button in pressed state - https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/ios-pressed.jpg?raw=true
+
+![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/ios.jpg?raw=true)
