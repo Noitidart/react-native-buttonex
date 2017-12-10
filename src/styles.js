@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     textBorderedIOS: {
         paddingVertical: 12 // link81919
     },
-    textBorderedOrTransparentedAndroid: {
+    textDefaultColorAndroid: {
         color: '#2196F3'
     },
     buttonDisabled: Platform.select({

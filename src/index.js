@@ -63,7 +63,7 @@ class Button extends Component<Props, State> {
                 if (isIOS || (isAndroid && (transparent || bordered))) textStyles.push({ color });
                 else if (!transparent) buttonStyles.push({ backgroundColor:color }); // isAndroid on this line
             } else {
-                if (isAndroid && (transparent || bordered)) textStyles.push(styles.textBorderedOrTransparentedAndroid);
+                if (isAndroid && (transparent || bordered)) textStyles.push(styles.textDefaultColorAndroid);
             }
             if (noShadow && isAndroid && !bordered && !transparent) {
                 buttonStyles.push(styles.buttonUnelevatedAndroid);
