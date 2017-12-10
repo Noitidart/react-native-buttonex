@@ -7,7 +7,6 @@ import { Platform, StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     button: Platform.select({
-        ios: undefined,
         android: {
             elevation: 4,
             backgroundColor: '#2196F3', // Material design blue from https://material.google.com/style/color.html#color-color-palette
@@ -52,8 +51,7 @@ const styles = StyleSheet.create({
     textBold:Platform.select({
         ios: {
             fontWeight: '500'
-        },
-        android: undefined
+        }
     }),
     textBorderedIOS: {
         paddingVertical: 12 // link81919
@@ -62,7 +60,6 @@ const styles = StyleSheet.create({
         color: '#2196F3'
     },
     buttonDisabled: Platform.select({
-        ios: undefined,
         android: {
             elevation: 0,
             backgroundColor: '#DFDFDF'
