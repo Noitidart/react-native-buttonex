@@ -18,9 +18,35 @@ Short for react-native ButtonExtended. This module is a copy of the default reac
 
 * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
 
-## Installation
+## Usage
+
+### Installation
 
     npm install --save react-native-buttonex
+
+### Import
+
+    import Button from 'react-native-buttonex';
+
+### Render
+
+    <Button title="Hi" />
+
+## Properties
+
+|         Prop        |                                Type                               | Default | Required | Description                                                                                                                                                            |
+|:-------------------:|:-----------------------------------------------------------------:|:-------:|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| accessibilityLabel  | string                                                            |         |          | Text to display for blindness accessibility features.                                                                                                                  |
+| bold                | bool                                                              |         |          | *(iOS only)* Makes the font weight heavier.                                                                                                                            |
+| bordered            | bool                                                              |         |          | Makes the button of a border. Makes `color` prop affect font and border color.                                                                                         |
+| color               | ![color](http://facebook.github.io/react-native/docs/colors.html) |         |          | Color of the text (iOS), or background color of the button (Android). If `bordered` then color of text and border. If `transparent` (Android only) then color of text. |
+| disabled            | bool                                                              |         |          | If true, disable all interactions for this component.                                                                                                                  |
+| hasTVPreferredFocus | bool                                                              |         |          | *(Apple TV only)* TV preferred focus (see documentation for the View component).                                                                                       |
+| noShadow            | bool                                                              |         |          | *(Android only)* Removes the shadow which is there by default on Android.                                                                                              |
+| onPress             | function                                                          |         | Yes      | Handler to be called when the user taps the button.                                                                                                                    |
+| testID              | string                                                            |         |          | Used to locate this view in end-to-end tests.                                                                                                                          |
+| title               | string                                                            |         | Yes      | Text to display inside the button.                                                                                                                                     |
+| transparent         | bool                                                              |         |          | *(Android only)* Makes the button have no background. Makes `color` prop affect font color.                                                                            |
 
 ## Demo
 A demo is available as an Expo Snack - https://snack.expo.io/@noitsnack/react-native-buttonex
