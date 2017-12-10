@@ -18,7 +18,7 @@ type Props = {
     onPress: () => any,
     testID?: string, // Used to locate this view in end-to-end tests.
     title: string, // Text to display for blindness accessibility features
-    transparent?: boolean, // *(Android only)* iOS is always transparent. blocks/superceeds "bordered"
+    transparent?: boolean // *(Android only)* iOS is always transparent. blocks/superceeds "bordered"
 }
 
 type State = {
