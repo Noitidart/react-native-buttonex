@@ -118,3 +118,4 @@ Bordered button in pressed state - https://github.com/Noitidart/react-native-but
   * [ ] Maybe medium size on iOS I think this is used in headers
 * [ ] Android only - animate/elevate more on press prop? (default button on android is elevated, and pressing elevates it more && the ripple here is different, on press it elevates but doesnt start ripple until onPressOut, onPressIn it also gets a tinge darker - default is #d6d7d7 but when pressed it goes to #c9caca)
 * [ ] morph to loading
+* [ ] Android - the ripple is not respecting border radius of 2, i think this is bug on RN side though
