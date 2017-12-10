@@ -113,6 +113,8 @@ Bordered button in pressed state - https://github.com/Noitidart/react-native-but
 
 ### To do
 
-* [ ] iOS supports a smaller font size, and a medium font size I think. The current font size (18) is the largest I think. Should discuss with others out there.
+* [ ] iOS font size "small" and "medium" and current (18) should be "default" which is largest, discuss with designers out there
+  * [ ] Small size on iOS (small-bordered is used in App store)
+  * [ ] Maybe medium size on iOS I think this is used in headers
 * [ ] Android only - animate/elevate more on press prop? (default button on android is elevated, and pressing elevates it more && the ripple here is different, on press it elevates but doesnt start ripple until onPressOut, onPressIn it also gets a tinge darker - default is #d6d7d7 but when pressed it goes to #c9caca)
 * [ ] morph to loading
