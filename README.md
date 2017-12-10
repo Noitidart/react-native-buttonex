@@ -6,12 +6,12 @@ Short for react-native ButtonExtended. This module is a copy of the default reac
 This is a great article which inspired me to add these props - https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568 - it shows the various button components on Android and iOS.
 
 * `bordered`
-  * iOS has a bordered button as seen here - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this can be acheived by simply adding the `bordered` prop.
+  * iOS has a bordered button as seen in the App Store - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
   * Android also has a bordered button as seen in the Google Play store - https://i.imgur.com/Q4qWbNF.png - we see that there is no shadow on this button.
 * `bold` *(iOS Only)*
   * On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
 * `transparent` *(Android only)*
-  * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `transparent` prop, then the color applies to the "title" color. Example of native button that looks like this - https://i.imgur.com/JdZmwGK.png
+  * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `transparent` prop, then the color applies to the "title" color. Example dialog: https://i.imgur.com/JdZmwGK.png
 * `noShadow` *(Android only)*
   * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
 
@@ -19,11 +19,11 @@ This is a great article which inspired me to add these props - https://medium.co
 
 ### Installation
 
-    npm install --save react-native-buttonex
+    npm i react-native-buttonex
 
 ### Import
 
-    import Button from 'react-native-buttonex';
+    import Button from 'react-native-buttonex'
 
 ### Render
 
@@ -48,7 +48,7 @@ Here is the code for this demo:
 import React, { Component } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 
-import Button from 'react-native-buttonex' // 1.0.2
+import Button from 'react-native-buttonex'
 
 export default class App extends Component {
     render() {
@@ -110,3 +110,9 @@ const styles = StyleSheet.create({
 Bordered button in pressed state - https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/ios-pressed.jpg?raw=true
 
 ![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/ios.jpg?raw=true)
+
+### To do
+
+* [ ] iOS supports a smaller font size, and a medium font size I think. The current font size (18) is the largest I think. Should discuss with others out there.
+* [ ] Android only - animate/elevate more on press prop? (default button on android is elevated, and pressing elevates it more && the ripple here is different, on press it elevates but doesnt start ripple until onPressOut, onPressIn it also gets a tinge darker - default is #d6d7d7 but when pressed it goes to #c9caca)
+* [ ] morph to loading
