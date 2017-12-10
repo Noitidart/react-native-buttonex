@@ -1,24 +1,19 @@
 # react-native-buttonex
 Short for react-native ButtonExtended. This module is a copy of the default react-native/Button component from here - http://facebook.github.io/react-native/docs/button.html - https://github.com/facebook/react-native/blob/master/Libraries/Components/Button.js - everything works exactly the same. I just added four new props: `bordered`, `transparent`, `bold`, and `noShadow`. The motivation here was to acheive the native styles we see on Android and iOS.
 
-Motivation - This is a great article - https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568 - that shows the various button components on Android and iOS.
+### Motivation
 
-### `bordered`
+This is a great article which inspired me to add these props - https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568 - it shows the various button components on Android and iOS.
 
-* iOS has a bordered button as seen here - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this can be acheived by simply adding the `bordered` prop.
-* Android also has a bordered button as seen in the Google Play store - https://i.imgur.com/Q4qWbNF.png - we see that there is no shadow on this button.
-
-### `bold` *(iOS Only)*
-
-* On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
-
-### `transparent` *(Android only)*
-
-* In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `transparent` prop, then the color applies to the "title" color. Example of native button that looks like this - https://i.imgur.com/JdZmwGK.png
-
-### `noShadow` *(Android only)*
-
-* The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
+* `bordered`
+  * iOS has a bordered button as seen here - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this can be acheived by simply adding the `bordered` prop.
+  * Android also has a bordered button as seen in the Google Play store - https://i.imgur.com/Q4qWbNF.png - we see that there is no shadow on this button.
+* `bold` *(iOS Only)*
+  * On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
+* `transparent` *(Android only)*
+  * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `transparent` prop, then the color applies to the "title" color. Example of native button that looks like this - https://i.imgur.com/JdZmwGK.png
+* `noShadow` *(Android only)*
+  * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
 
 ## Usage
 
@@ -36,19 +31,13 @@ Motivation - This is a great article - https://medium.com/as-a-product-designer/
 
 ## Properties
 
-| Prop                | Type                                                             | Default | Required | Description                                                                                                                                                            |
-|---------------------|------------------------------------------------------------------|---------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| accessibilityLabel  | string                                                           |         |          | Text to display for blindness accessibility features.                                                                                                                  |
-| bold                | bool                                                             |         |          | *(iOS only)* Makes the font weight heavier.                                                                                                                            |
-| bordered            | bool                                                             |         |          | Makes the button of a border. Makes `color` prop affect font and border color.                                                                                         |
-| color               | [color](http://facebook.github.io/react-native/docs/colors.html) |         |          | Color of the text (iOS), or background color of the button (Android). If `bordered` then color of text and border. If `transparent` (Android only) then color of text. |
-| disabled            | bool                                                             |         |          | If true, disable all interactions for this component.                                                                                                                  |
-| hasTVPreferredFocus | bool                                                             |         |          | *(Apple TV only)* TV preferred focus (see documentation for the View component).                                                                                       |
-| noShadow            | bool                                                             |         |          | *(Android only)* Removes the shadow which is there by default on Android.                                                                                              |
-| onPress             | function                                                         |         | Yes      | Handler to be called when the user taps the button.                                                                                                                    |
-| testID              | string                                                           |         |          | Used to locate this view in end-to-end tests.                                                                                                                          |
-| title               | string                                                           |         | Yes      | Text to display inside the button.                                                                                                                                     |
-| transparent         | bool                                                             |         |          | *(Android only)* Makes the button have no background. Makes `color` prop affect font color.                                                                            |
+| Prop                                                                             | Type | Default | Required | Description                                                                                 |
+|----------------------------------------------------------------------------------|------|---------|----------|---------------------------------------------------------------------------------------------|
+| bold                                                                             | bool |         |          | *(iOS only)* Makes the font weight heavier.                                                 |
+| bordered                                                                         | bool |         |          | Makes the button of a border. Makes `color` prop affect font and border color.              |
+| noShadow                                                                         | bool |         |          | *(Android only)* Removes the shadow which is there by default on Android.                   |
+| transparent                                                                      | bool |         |          | *(Android only)* Makes the button have no background. Makes `color` prop affect font color. |
+| [...Button.props](http://facebook.github.io/react-native/docs/button.html#props) |      |         |          | All other props of the standard react-native `<Button>` component                           |
 
 ## Demo
 A demo is available as an Expo Snack - https://snack.expo.io/@noitsnack/react-native-buttonex
