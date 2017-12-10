@@ -18,6 +18,10 @@ Short for react-native ButtonExtended. This module is a copy of the default reac
 
 * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
 
+## Installation
+
+    npm install --save react-native-buttonex
+
 ## Demo
 A demo is available as an Expo Snack - https://snack.expo.io/@noitsnack/react-native-buttonex
 
