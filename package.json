@@ -23,9 +23,6 @@
   },
   "homepage": "https://github.com/Noitidart/react-native-buttonex#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react-native": "^4.0.0",
     "flow-bin": "^0.57.3"
   }
 }
