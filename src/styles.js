@@ -94,6 +94,9 @@ const styles = StyleSheet.create({
         paddingVertical: 12, // link3918
         color: '#FFFFFF'
     },
+    textBorderedDisabledIOS: {
+        paddingVertical: 12 // link3918
+    },
     buttonBorderedActiveIOS: {
         position: 'absolute',
         width: '100%',

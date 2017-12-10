@@ -45,7 +45,10 @@ class Button extends Component<Props, State> {
             accessibilityTraits.push('disabled');
             buttonStyles.push(styles.buttonDisabled);
             textStyles.push(styles.textDisabled);
-            if (bordered) buttonStyles.push(styles.buttonBordered, styles.buttonBorderedDisabled);
+            if (bordered) {
+                buttonStyles.push(styles.buttonBordered, styles.buttonBorderedDisabled);
+                if (isIOS) textStyles.push(styles.textBorderedDisabledIOS);
+            }
             if (isAndroid) {
                 if (transparent) buttonStyles.push(styles.buttonTransparentDisabledAndroid);
             }
