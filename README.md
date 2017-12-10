@@ -1,6 +1,8 @@
 # react-native-buttonex
 Short for react-native ButtonExtended. This module is a copy of the default react-native/Button component from here - http://facebook.github.io/react-native/docs/button.html - https://github.com/facebook/react-native/blob/master/Libraries/Components/Button.js - everything works exactly the same. I just added four new props: `bordered`, `transparent`, `bold`, and `noShadow`. The motivation here was to acheive the native styles we see on Android and iOS.
 
+Motivation - This is a great article - https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568 - that shows the various button components on Android and iOS.
+
 ### `bordered`
 
 * iOS has a bordered button as seen here - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this can be acheived by simply adding the `bordered` prop.
