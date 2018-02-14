@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
             elevation: 0,
             borderColor: '#2196F3',
             borderWidth: 1,
-            backgroundColor: '#FFFFFF'
+            backgroundColor: 'transparent'
         }
     }),
     buttonUnelevatedAndroid: {
@@ -70,8 +70,11 @@ const styles = StyleSheet.create({
             borderColor: '#CDCDCD'
         },
         android: {
-            borderColor: '#DFDFDF',
-            backgroundColor: '#FFFFFF'
+            // borderColor: '#DFDFDF',
+            // backgroundColor: '#DFDFDF'
+
+            borderColor: '#9E9E9E',
+            backgroundColor: 'transparent'
         }
     }),
     buttonTransparentDisabledAndroid: {
