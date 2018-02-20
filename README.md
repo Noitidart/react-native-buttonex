@@ -1,24 +1,19 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [react-native-buttonex](#react-native-buttonex)
-    - [Motivation](#motivation)
-  - [Usage](#usage)
-    - [Installation](#installation)
-    - [Import](#import)
-    - [Render](#render)
-  - [Properties](#properties)
-  - [Demo](#demo)
-    - [Screenshots](#screenshots)
-    - [Android](#android)
-    - [iOS](#ios)
-    - [To do](#to-do)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # react-native-buttonex
 Short for react-native ButtonExtended. This module is a copy of the default react-native/Button component from here - http://facebook.github.io/react-native/docs/button.html - https://github.com/facebook/react-native/blob/master/Libraries/Components/Button.js - everything works exactly the same. I just added four new props: `bordered`, `transparent`, `bold`, and `noShadow`. The motivation here was to acheive the native styles we see on Android and iOS.
+
+### Table of Contents
+
+- [Motivation](#motivation)
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [Import](#import)
+  - [Render](#render)
+- [Properties](#properties)
+- [Demo](#demo)
+  - [Screenshots](#screenshots)
+  - [Android](#android)
+  - [iOS](#ios)
+  - [To do](#to-do)
 
 ### Motivation
 
