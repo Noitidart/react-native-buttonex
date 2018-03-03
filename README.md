@@ -29,7 +29,7 @@ This is a great article which inspired me to add these props - https://medium.co
 * Bold Title Label *(iOS Only)*
   * On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
 * Transparent Background Style *(Android only)*
-  * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `transparent` prop, then the color applies to the "title" color. Example dialog: https://i.imgur.com/JdZmwGK.png
+  * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `noBackground` prop, then the color applies to the "title" color. Example dialog: https://i.imgur.com/JdZmwGK.png
 * Flat Style *(Android only)*
   * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
 
