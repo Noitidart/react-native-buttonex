@@ -19,14 +19,14 @@ Short for react-native ButtonExtended. This module is a copy of the default reac
 
 This is a great article which inspired me to add these props - https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568 - it shows the various button components on Android and iOS.
 
-* `bordered`
+* Bordered Style
   * iOS has a bordered button as seen in the App Store - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
   * Android also has a bordered button as seen in the Google Play store - https://i.imgur.com/Q4qWbNF.png - we see that there is no shadow on this button.
-* `bold` *(iOS Only)*
+* Bold Title Label *(iOS Only)*
   * On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
-* `transparent` *(Android only)*
+* Transparent Background Style *(Android only)*
   * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `transparent` prop, then the color applies to the "title" color. Example dialog: https://i.imgur.com/JdZmwGK.png
-* `noShadow` *(Android only)*
+* Flat Style *(Android only)*
   * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
 
 ## Usage
@@ -41,83 +41,79 @@ This is a great article which inspired me to add these props - https://medium.co
 
 ### Render
 
+All styles accept the properties of `disabled` and/or `loading`. Some properties beheave differently based on the style. This is explained below.
+
+#### Default Style (Android - Raised Style) (iOS - Text Button Style)
+
     <Button title="Hi" />
+
+* Android Behavior
+  * Description - A raised button with a solid background color. In Android, on press it should elevate even more. However this feature is not yet implemented because `useNativeDriver` does not work with `elevation` property yet.
+  * Applicable Properties
+    * `color` - Changes the color of the background.
+    * `black` - Makes the title label black. Useful if the the default color of white is not readable on background color determined by `color`.
+* iOS Behavior
+  * Applicable Properties
+    * `color` - Changes the color of the title label.
+    * `bold` - Increase font weight of title to 500.
+
+#### Bordered Style
+
+    <Button title="Hi" bordered />
+
+* Android Behavior
+  * Description - Background color defaults to white.
+  * Applicable Properties
+    * `color` - Changes the color of the title label and border.
+    * `noBackground` - Make the background transparent. If this prop is set at same time as `black`, this property takes precedence, and a black backgroudn will not be applied.
+    * `black` - Makes the backgrond color of the button black.
+* iOS Behavior
+  * Description - Background color is transparent. On press, the title label color goes to white, and the background turns into color set by `color`.
+  * Applicable Properties
+    * `color` - Changes the color of the title label and border. When button is pressed, this becomes the background color.
+    * `bold` - Increase font weight of title to 500.
+
+#### No Background Style (Android Only)
+
+    <Button title="Hi" noBackground />
+
+* Behavior
+  * Description - Just a text label button with a transparent background.
+  * Applicable Properties
+    * `color` - Changes the color of the title label.
+
+#### Flat Style (Android Only)
+
+    <Button title="Hi" flat />
+
+* Behavior
+  * Description - Same as "raised style" but without the elevation.
+  * Applicable Properties
+    * `color` - Changes the color of the background.
+    * `black` - Makes the title label black. Useful if the the default color of white is not readable on background color determined by `color`.
 
 ## Properties
 
-| Prop                                                                             | Type | Default | Required | Description                                                                                 |
-|----------------------------------------------------------------------------------|------|---------|----------|---------------------------------------------------------------------------------------------|
-| bold                                                                             | bool |         |          | *(iOS only)* Makes the font weight heavier.                                                 |
-| bordered                                                                         | bool |         |          | Makes the button of a border. Makes `color` prop affect font and border color.              |
-| flat                                                                             | bool |         |          | *(Android only)* Removes the shadow which is there by default on Android.                   |
-| transparent                                                                      | bool |         |          | *(Android only)* Makes the button have no background. Makes `color` prop affect font color. |
-| [...Button.props](http://facebook.github.io/react-native/docs/button.html#props) |      |         |          | All other props of the standard react-native `<Button>` component                           |
+| Prop                                                                             | Type | Default | Required | Description                                                                                                                                                          |
+|----------------------------------------------------------------------------------|------|---------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| black                                                                            | bool |         |          | *(Android only)* Changes either the title color, border color, or background color, depending on style. See [Usage](#Usage) section above.                           |
+| bold                                                                             | bool |         |          | *(iOS only)* Makes the font weight heavier.                                                                                                                          |
+| bordered                                                                         | bool |         |          | Gives the button a border.                                                                                                                                           |
+| flat                                                                             | bool |         |          | *(Android only)* Removes the shadow which is there by default on Android.                                                                                            |
+| loading                                                                          | bool |         |          | *(Android only)* I plan to implement this for iOS soon. I haven't found the style guide for this yet. This is a boolean value which makes the button into a spinner. |
+| noBackground                                                                     | bool |         |          | *(Android only)* Gives a transparent background color to the button.                                                                                                 |
+| [...Button.props](http://facebook.github.io/react-native/docs/button.html#props) |      |         |          | All other props of the standard react-native `<Button>` component.                                                                                                   |
 
 ## Demo
-A demo is available as an Expo Snack - https://snack.expo.io/@noitsnack/react-native-buttonex
-
-Here is the code for this demo:
-
-```
-import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
-
-import Button from 'react-native-buttonex'
-
-export default class App extends Component {
-    render() {
-        return (
-            <View style={styles.column}>
-                <Text>Current/default implementation of react-native/Button</Text>
-                <View style={styles.row}>
-                    <Button title="Cancel" color="red" />
-                    <Button title="Cancel" color="red" disabled />
-                </View>
-                <Text>`bordered` - makes `color` affect font and border. The background is always white on Android and always transparent on iOS. (Android - do not set `transparent` prop as this will override `bordered`)</Text>
-                <View style={styles.row}>
-                    <Button title="Cancel" color="red" bordered />
-                    <Button title="Cancel" color="red" bordered disabled />
-                </View>
-                <Text>(Android only)`transparent` - makes `color` affect font and removes background</Text>
-                <View style={styles.row}>
-                    <Button title="Cancel" color="red" transparent />
-                    <Button title="Cancel" color="red" transparent disabled />
-                </View>
-                <Text>(Android only) `noShadow` - default &lt;Button&gt; on Anroid has a shadow, this removes it. </Text>
-                <View style={styles.row}>
-                    <Button title="Cancel" color="red" noShadow />
-                    <Button title="Cancel" color="red" noShadow disabled />
-                </View>
-                <Text>(iOS only) `bold` - Makes the title font thicker</Text>
-                <View style={styles.row}>
-                    <Button title="Cancel" color="red" bold />
-                    <Button title="Cancel" color="red" bold disabled />
-                </View>
-            </View>
-        )
-    }
-}
-
-const styles = StyleSheet.create({
-    row: {
-        justifyContent: 'space-around',
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    column: {
-        flex: 1,
-        backgroundColor: 'white',
-        padding: 50,
-        justifyContent: 'space-between'
-    }
-})
-```
+A demo is available as an Expo Snack - https://snack.expo.io/@noitsnack/react-native-buttonex-v2.0
 
 ### Screenshots
 
 ### Android
 
-![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/android.png?raw=true)
+HD Screencast - https://gfycat.com/IncompatibleConfusedBergerpicard
+
+![GIF](https://thumbs.gfycat.com/IncompatibleConfusedBergerpicard-size_restricted.gif)
 
 ### iOS
 
