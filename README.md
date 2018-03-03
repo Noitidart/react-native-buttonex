@@ -5,15 +5,19 @@ Short for react-native ButtonExtended. This module is a copy of the default reac
 
 - [Motivation](#motivation)
 - [Usage](#usage)
-  - [Installation](#installation)
-  - [Import](#import)
-  - [Render](#render)
+- [Installation](#installation)
+- [Import](#import)
+- [Render](#render)
+    - [Default Style (Android - Raised Style) (iOS - Text Button Style)](#default-style-android---raised-style-ios---text-button-style)
+    - [Bordered Style](#bordered-style)
+    - [No Background Style (Android Only)](#no-background-style-android-only)
+    - [Flat Style (Android Only)](#flat-style-android-only)
 - [Properties](#properties)
 - [Demo](#demo)
-  - [Screenshots](#screenshots)
-  - [Android](#android)
-  - [iOS](#ios)
-  - [To do](#to-do)
+- [Screenshots / Screencast](#screenshots--screencast)
+- [Android](#android)
+- [iOS](#ios)
+- [Future / To Do](#future--to-do)
 
 ### Motivation
 
@@ -107,7 +111,7 @@ All styles accept the properties of `disabled` and/or `loading`. Some properties
 ## Demo
 A demo is available as an Expo Snack - https://snack.expo.io/@noitsnack/react-native-buttonex-v2.0
 
-### Screenshots
+### Screenshots / Screencast
 
 ### Android
 
@@ -121,7 +125,7 @@ Bordered button in pressed state - https://github.com/Noitidart/react-native-but
 
 ![](https://github.com/Noitidart/react-native-buttonex/blob/master/screenshots/ios.jpg?raw=true)
 
-### To do
+## Future / To Do
 
 * [ ] iOS font size "small" and "medium" and current (18) should be "default" which is largest, discuss with designers out there
   * [ ] Small size on iOS (small-bordered is used in App store)
