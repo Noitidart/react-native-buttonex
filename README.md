@@ -49,7 +49,7 @@ This is a great article which inspired me to add these props - https://medium.co
 |----------------------------------------------------------------------------------|------|---------|----------|---------------------------------------------------------------------------------------------|
 | bold                                                                             | bool |         |          | *(iOS only)* Makes the font weight heavier.                                                 |
 | bordered                                                                         | bool |         |          | Makes the button of a border. Makes `color` prop affect font and border color.              |
-| noShadow                                                                         | bool |         |          | *(Android only)* Removes the shadow which is there by default on Android.                   |
+| flat                                                                             | bool |         |          | *(Android only)* Removes the shadow which is there by default on Android.                   |
 | transparent                                                                      | bool |         |          | *(Android only)* Makes the button have no background. Makes `color` prop affect font color. |
 | [...Button.props](http://facebook.github.io/react-native/docs/button.html#props) |      |         |          | All other props of the standard react-native `<Button>` component                           |
 
@@ -131,6 +131,9 @@ Bordered button in pressed state - https://github.com/Noitidart/react-native-but
   * [ ] Small size on iOS (small-bordered is used in App store)
     * https://images.techhive.com/images/article/2015/10/2fa_invitation_screen_ios-100619137-large.png
   * [ ] Maybe medium size on iOS I think this is used in headers
-* [ ] Android only - animate/elevate more on press prop? (default button on android is elevated, and pressing elevates it more && the ripple here is different, on press it elevates but doesnt start ripple until onPressOut, onPressIn it also gets a tinge darker - default is #d6d7d7 but when pressed it goes to #c9caca)
-* [ ] morph to loading
+* [ ] Android only - for raised button, option to animate/elevate more on press prop - not yet implemented as `useNativeDriver` doesn't work with `elevation` yet (default button on android is elevated, and pressing elevates it more && the ripple here is different, on press it elevates but doesnt start ripple until onPressOut, onPressIn it also gets a tinge darker - default is #d6d7d7 but when pressed it goes to #c9caca)
+* loading state
+  * [x] Android (android has no morph antimation) (available in v2)
+  * [ ] iOS
 * [ ] Android - the ripple is not respecting border radius of 2, i think this is bug on RN side though
+* [ ] Android - check what the ripple color should be for the various forms
