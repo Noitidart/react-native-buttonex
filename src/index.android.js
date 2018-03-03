@@ -148,9 +148,9 @@ class Button extends Component<Props> {
         }
 
         return (
-            <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} disabled={disabled} onPress={onPress} testID={testID}>
+            <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} disabled={disabled || loading} onPress={onPress} testID={testID}>
                 <View style={buttonStyle}>
-                    <Text style={textStyle} disabled={disabled}>{formattedTitle}</Text>
+                    <Text style={textStyle} disabled={disabled || loading}>{formattedTitle}</Text>
                     { loading && <ActivityIndicator style={styles.activity} color={activityColor} size="small" /> }
                 </View>
             </TouchableNativeFeedback>
