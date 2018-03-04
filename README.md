@@ -21,17 +21,19 @@ This module is a copy of the default react-native/Button component from here - h
 
 ### Motivation
 
-This is a great article which inspired me to add these props - https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568 - it shows the various button components on Android and iOS.
+This is a great article which inspired me to add these props - Android VS. iOS: Compare 20 UI Components & Patterns [Part 1](https://medium.com/@chunchuanlin/android-vs-ios-compare-20-ui-components-patterns-part-1-ad33c2418b45) and [Part 2](https://medium.com/@chunchuanlin/android-vs-ios-compare-20-ui-components-patterns-part-2-3edba2076b25) - ([Original Article in Chineese](https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568)). It shows the various button components on Android and iOS.
+
+![](https://cdn-images-1.medium.com/max/960/1*QqZkErjEwtUWgJ7X5MEpzA.png)
 
 * Bordered Style
   * iOS has a bordered button as seen in the App Store - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
   * Android also has a bordered button as seen in the Google Play store - https://i.imgur.com/Q4qWbNF.png - we see that there is no shadow on this button.
 * Bold Title Label *(iOS Only)*
   * On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
-* Transparent Background Style *(Android only)*
+* Transparent/No Background Style *(Android only)*
   * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `noBackground` prop, then the color applies to the "title" color. Example dialog: https://i.imgur.com/JdZmwGK.png
 * Flat Style *(Android only)*
-  * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add this prop to remove that shadow.
+  * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add `flat` to remove this shadow.
 
 ## Usage
 
@@ -45,12 +47,13 @@ This is a great article which inspired me to add these props - https://medium.co
 
 ### Render
 
-All styles accept the properties of `disabled` and/or `loading`. Some properties beheave differently based on the style. This is explained below.
+All styles accept the properties of `disabled` and/or `loading`. Some properties behave differently based on the style. This is explained below.
 
 #### Default Style (Android - Raised Style) (iOS - Text Button Style)
 
     <Button title="Hi" />
 
+* This is an exact copy of the default React Native <Button> component - [http://facebook.github.io/react-native/docs/button.html](http://facebook.github.io/react-native/docs/button.html).
 * Android Behavior
   * Description - A raised button with a solid background color. In Android, on press it should elevate even more. However this feature is not yet implemented because `useNativeDriver` does not work with `elevation` property yet.
   * Applicable Properties
@@ -70,19 +73,19 @@ All styles accept the properties of `disabled` and/or `loading`. Some properties
   * Applicable Properties
     * `color` - Changes the color of the title label and border.
     * `noBackground` - Make the background transparent. If this prop is set at same time as `black`, this property takes precedence, and a black backgroudn will not be applied.
-    * `black` - Makes the backgrond color of the button black.
+    * `black` - Makes the background color of the button black.
 * iOS Behavior
-  * Description - Background color is transparent. On press, the title label color goes to white, and the background turns into color set by `color`.
+  * Description - Background color is transparent. On press, the title label color goes to white, and the background turns into color set by `color`. The animation on press uses `useNativeDriver`.
   * Applicable Properties
     * `color` - Changes the color of the title label and border. When button is pressed, this becomes the background color.
     * `bold` - Increase font weight of title to 500.
 
-#### No Background Style (Android Only)
+#### Text Button Style (Android Only)
 
     <Button title="Hi" noBackground />
 
 * Behavior
-  * Description - Just a text label button with a transparent background.
+  * Description - A text label button with a transparent background.
   * Applicable Properties
     * `color` - Changes the color of the title label.
 
