@@ -1,6 +1,6 @@
 {
   "name": "react-native-buttonex",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Adds extra props to standard react-native/Button package. Adds ability for bordered style, bold label, transparent background, and no shadow.",
   "main": "./src/",
   "scripts": {
