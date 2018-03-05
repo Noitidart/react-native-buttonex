@@ -10,7 +10,7 @@ This module is a copy of the default react-native/Button component from here - h
 - [Render](#render)
     - [Default Style (Android - Raised Style) (iOS - Text Button Style)](#default-style-android---raised-style-ios---text-button-style)
     - [Bordered Style](#bordered-style)
-    - [No Background Style (Android Only)](#no-background-style-android-only)
+    - [Text Button Style (Android Only)](#text-button-style-android-only)
     - [Flat Style (Android Only)](#flat-style-android-only)
 - [Properties](#properties)
 - [Demo](#demo)
@@ -72,7 +72,7 @@ All styles accept the properties of `disabled` and/or `loading`. Some properties
   * Description - Background color defaults to white.
   * Applicable Properties
     * `color` - Changes the color of the title label and border.
-    * `noBackground` - Make the background transparent. If this prop is set at same time as `black`, this property takes precedence, and a black backgroudn will not be applied.
+    * `noBackground` - Make the background transparent. If this prop is set at same time as `black`, this property takes precedence, and a black background will not be applied.
     * `black` - Makes the background color of the button black.
 * iOS Behavior
   * Description - Background color is transparent. On press, the title label color goes to white, and the background turns into color set by `color`. The animation on press uses `useNativeDriver`.
