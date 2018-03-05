@@ -1,9 +1,9 @@
 # react-native-buttonex
-This module is a copy of the default react-native/Button component from here - http://facebook.github.io/react-native/docs/button.html - https://github.com/facebook/react-native/blob/master/Libraries/Components/Button.js - everything works exactly the same. I just added some new props to acheive the various native styles we see on Android and iOS.
+This module is a copy of the default react-native/Button component from here - http://facebook.github.io/react-native/docs/button.html - https://github.com/facebook/react-native/blob/master/Libraries/Components/Button.js - everything works exactly the same. This official component by React Native is very close to look of the native buttons we see on iOS and Android. However there are some minor changes needed to really get that perfect look. This module adds some new props to perfectly acheive the various native styles we see on Android and iOS.
 
 ### Table of Contents
 
-- [Motivation](#motivation)
+- [How does the native button really look?](#how-does-the-native-button-really-look)
 - [Usage](#usage)
 - [Installation](#installation)
 - [Import](#import)
@@ -19,21 +19,35 @@ This module is a copy of the default react-native/Button component from here - h
 - [iOS](#ios)
 - [Future / To Do](#future--to-do)
 
-### Motivation
+### How does the native button really look?
 
-This is a great article which inspired me to add these props - Android VS. iOS: Compare 20 UI Components & Patterns [Part 1](https://medium.com/@chunchuanlin/android-vs-ios-compare-20-ui-components-patterns-part-1-ad33c2418b45) and [Part 2](https://medium.com/@chunchuanlin/android-vs-ios-compare-20-ui-components-patterns-part-2-3edba2076b25) - ([Original Article in Chineese](https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568)). It shows the various button components on Android and iOS.
+This is a great article which shows screenshots - Android VS. iOS: Compare 20 UI Components & Patterns [Part 1](https://medium.com/@chunchuanlin/android-vs-ios-compare-20-ui-components-patterns-part-1-ad33c2418b45) and [Part 2](https://medium.com/@chunchuanlin/android-vs-ios-compare-20-ui-components-patterns-part-2-3edba2076b25) - ([Original Article in Chineese](https://medium.com/as-a-product-designer/android-vs-ios-compare-20-ui-components-patterns-feaf94533568)). It shows the various button components on Android and iOS.
 
 ![](https://cdn-images-1.medium.com/max/960/1*QqZkErjEwtUWgJ7X5MEpzA.png)
 
+Below are screenshots of where I find these button styles in native apps:
+
 * Bordered Style
-  * iOS has a bordered button as seen in the App Store - https://i.imgur.com/BY4Hdh3.png - and when it is pressed it looks like this - https://i.imgur.com/fEcSMED.png - this is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
-  * Android also has a bordered button as seen in the Google Play store - https://i.imgur.com/Q4qWbNF.png - we see that there is no shadow on this button.
-* Bold Title Label *(iOS Only)*
-  * On iOS the font is sometimes bold. For example - https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png - notice the "Post" button is bolded while the "Cancel" button is not.
-* Transparent/No Background Style *(Android only)*
-  * In all Android dialogs we see a button with a transparent background and a color for the font. In the default `react-native/Button` component we cannot control the color of the "title". This module fixes that. If you add the `noBackground` prop, then the color applies to the "title" color. Example dialog: https://i.imgur.com/JdZmwGK.png
+  * iOS
+    * App Store
+      * Default state: https://i.imgur.com/BY4Hdh3.png
+      * Pressed state: https://i.imgur.com/fEcSMED.png
+    * This is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
+  * Android
+    * Google Play store
+      * Default state: https://i.imgur.com/Q4qWbNF.png
+* Bold Style *(iOS Only)*
+  * Share dialog
+    * https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png (the "Post" button is bolded)
+* Text Button
+  * iOS
+    * This is the default look of all buttons on iOS
+  * Android
+    * All dialogs
+      * https://i.imgur.com/JdZmwGK.png
 * Flat Style *(Android only)*
-  * The Google Play store shows us a flat button style, without a shadow - https://i.imgur.com/Q4qWbNF.png - the default `react-native/Button` always has a shadow. Add `flat` to remove this shadow.
+  * Google Play Store
+    * https://i.imgur.com/Q4qWbNF.png
 
 ## Usage
 
