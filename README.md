@@ -44,7 +44,7 @@ Below are screenshots of where I find these button styles in native apps:
     * This is the default look of all buttons on iOS
   * Android
     * All dialogs
-      * https://i.imgur.com/JdZmwGK.png
+      * https://i.imgur.com/JdZmwGK.png ("CANCEL" button is in default state, "OK" button is in pressed state)
 * Flat Style *(Android only)*
   * Google Play Store
     * https://i.imgur.com/Q4qWbNF.png (The "OPEN" button)
