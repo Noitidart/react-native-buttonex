@@ -30,12 +30,12 @@ Below are screenshots of where I find these button styles in native apps:
 * Bordered Style
   * iOS
     * App Store
-      * Default state: https://i.imgur.com/BY4Hdh3.png (notice the "GET" button)
-      * Pressed state: https://i.imgur.com/fEcSMED.png (notice the "OPEN" button)
+      * Default state: https://i.imgur.com/BY4Hdh3.png (the "GET" button)
+      * Pressed state: https://i.imgur.com/fEcSMED.png (the "OPEN" button)
     * This is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
   * Android
     * Google Play store
-      * Default state: https://i.imgur.com/Q4qWbNF.png
+      * https://i.imgur.com/Q4qWbNF.png (the "UNINSTALL" button)
 * Bold Style *(iOS Only)*
   * Share dialog
     * https://raw.githubusercontent.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/master/screenshots/screenshot-ios7-share.png (the "Post" button is bolded)
@@ -47,7 +47,7 @@ Below are screenshots of where I find these button styles in native apps:
       * https://i.imgur.com/JdZmwGK.png
 * Flat Style *(Android only)*
   * Google Play Store
-    * https://i.imgur.com/Q4qWbNF.png
+    * https://i.imgur.com/Q4qWbNF.png (The "OPEN" button)
 
 ## Usage
 
