@@ -30,8 +30,8 @@ Below are screenshots of where I find these button styles in native apps:
 * Bordered Style
   * iOS
     * App Store
-      * Default state: https://i.imgur.com/BY4Hdh3.png
-      * Pressed state: https://i.imgur.com/fEcSMED.png
+      * Default state: https://i.imgur.com/BY4Hdh3.png (notice the "GET" button)
+      * Pressed state: https://i.imgur.com/fEcSMED.png (notice the "OPEN" button)
     * This is the effect got by creating a `system`/`roundedRect` type `UIButton` - https://developer.apple.com/documentation/uikit/uibuttontype/1624021-system
   * Android
     * Google Play store
