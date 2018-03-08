@@ -69,10 +69,11 @@ All styles accept the properties of `disabled` and/or `loading`. Some properties
 
 * This is an exact copy of the default React Native <Button> component - [http://facebook.github.io/react-native/docs/button.html](http://facebook.github.io/react-native/docs/button.html).
 * Android Behavior
-  * Description - A raised button with a solid background color. In Android, on press it should elevate even more. However this feature is not yet implemented because `useNativeDriver` does not work with `elevation` property yet.
+  * Description - A raised button with a solid background color.
   * Applicable Properties
     * `color` - Changes the color of the background.
     * `black` - Makes the title label black. Useful if the the default color of white is not readable on background color determined by `color`.
+    * `animated` - While the button is pressed, the button raises up more in elveation. This is the default behavior on Android native button, however in this package it is an option, because this option does not use `useNativeDriver`, so it is not the best performance.
 * iOS Behavior
   * Applicable Properties
     * `color` - Changes the color of the title label.

@@ -1,12 +1,13 @@
 // @flow
 
 import React, { Component } from 'react'
-import { ActivityIndicator, Text, TouchableNativeFeedback, View } from 'react-native'
+import { ActivityIndicator, Animated, Text, TouchableNativeFeedback, View } from 'react-native'
 
 import styles, { BLACK, DEFAULT_COLOR, PRIMARY_DISABLED_COLOR, SECONDARY_DISABLED_COLOR, WHITE } from './styles'
 
 type Props = {
     accessibilityLabel?: string, // Text to display for blindness accessibility features
+    animated?: boolean,
     black?: boolean,
     bordered?: boolean,
     color?: string,
@@ -19,9 +20,18 @@ type Props = {
     title: string // Text to display for blindness accessibility features
 }
 
-class Button extends Component<Props> {
+type State = {
+    raisedElevation: typeof Animated.Value
+}
+
+class Button extends Component<Props, State> {
+    state = {
+        raisedElevation: new Animated.Value(2)
+    }
+
     render() {
-        const { accessibilityLabel, black, bordered, color, disabled, flat, loading, noBackground, onPress, testID, title } = this.props;
+        const { accessibilityLabel, animated, black, bordered, color, disabled, flat, loading, noBackground, onPress, testID, title } = this.props;
+        const { raisedElevation } = this.state;
 
         const formattedTitle = title.toUpperCase();
 
@@ -145,6 +155,18 @@ class Button extends Component<Props> {
                 else activityColor = black ? BLACK : WHITE;
             }
 
+            if (animated) {
+                // button is elevation 6 when pressed per - https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android
+                return (
+                    <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} disabled={disabled || loading} onPress={onPress} onPressIn={this.raiseButton} onPressOut={this.dropButton} testID={testID}>
+                        <Animated.View style={[buttonStyle, { elevation:raisedElevation }]}>
+                            <Text style={textStyle} disabled={disabled || loading}>{formattedTitle}</Text>
+                            { loading && <ActivityIndicator style={styles.activity} color={activityColor} size="small" /> }
+                        </Animated.View>
+                    </TouchableNativeFeedback>
+                )
+            }
+
         }
 
         return (
@@ -157,6 +179,9 @@ class Button extends Component<Props> {
         )
 
     }
+
+    raiseButton = () => Animated.timing(this.state.raisedElevation, { toValue:6, duration:100 }).start();
+    dropButton = () => Animated.timing(this.state.raisedElevation, { toValue:2, duration:100 }).start();
 }
 
 export default Button
