@@ -5,20 +5,37 @@ import { ActivityIndicator, Animated, Text, TouchableNativeFeedback, View } from
 
 import styles, { BLACK, DEFAULT_COLOR, PRIMARY_DISABLED_COLOR, SECONDARY_DISABLED_COLOR, WHITE } from './styles'
 
-type Props = {
+type BaseProps = {|
     accessibilityLabel?: string, // Text to display for blindness accessibility features
-    animated?: boolean,
-    black?: boolean,
-    bordered?: boolean,
     color?: string,
     disabled?: boolean,
-    flat?: boolean,
     loading?: boolean,
-    noBackground?: boolean,
     onPress: () => any, // if either "loading" and/or "disabled" are true, then onPress will not trigger
     testID?: string, // Used to locate this view in end-to-end tests.
     title: string // Text to display for blindness accessibility features
-}
+|}
+
+type Props = {|
+    ...BaseProps,
+    // raised button
+    animated?: boolean,
+    black?: boolean
+|} | {|
+    ...BaseProps,
+    // bordered button
+    bordered: true,
+    black?: boolean,
+    noBackground?: boolean
+|} | {|
+    ...BaseProps,
+    // text button
+    noBackground: true
+|} | {|
+    ...BaseProps,
+    // flat button
+    flat: true,
+    black?: boolean
+|}
 
 type State = {
     raisedElevation: typeof Animated.Value
