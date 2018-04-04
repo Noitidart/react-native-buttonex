@@ -61,7 +61,13 @@ Below are screenshots of where I find these button styles in native apps:
 
 ### Render
 
-All styles accept the properties of `disabled` and/or `loading`. Some properties behave differently based on the style. This is explained below.
+All styles accept the properties of:
+
+  * `disabled`
+  * `loading`
+  * `lightRipple`
+
+Other properties behave differently based on the style. This is explained below.
 
 #### Default Style (Android - Raised Style) (iOS - Text Button Style)
 
@@ -123,6 +129,7 @@ All styles accept the properties of `disabled` and/or `loading`. Some properties
 | bold                                                                             | bool |         |          | *(iOS only)* Makes the font weight heavier.                                                                                                           |
 | bordered                                                                         | bool |         |          | Gives the button a border.                                                                                                                            |
 | flat                                                                             | bool |         |          | *(Android only)* Removes the shadow which is there by default on Android.                                                                             |
+| lightRipple                                                                      | bool |         |          | *(Android only)* Use in dark themes. When you want the ripple to be white. Default is `rgba(0, 0, 0, 0.12)`                                           |
 | loading                                                                          | bool |         |          | *(Android only)* Disables `onPress` handler and shows a spinner. I plan to implement this for iOS soon. I haven't found the style guide for this yet. |
 | noBackground                                                                     | bool |         |          | *(Android only)* Gives a transparent background color to the button.                                                                                  |
 | [...Button.props](http://facebook.github.io/react-native/docs/button.html#props) |      |         |          | All other props of the standard react-native `<Button>` component.                                                                                    |

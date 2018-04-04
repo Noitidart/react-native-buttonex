@@ -41,13 +41,16 @@ type State = {
     raisedElevation: typeof Animated.Value
 }
 
+const rippleDarkTheme = TouchableNativeFeedback.Ripple('rgba(255, 255, 255, 0.2)', true); // https://material.io/guidelines/components/buttons.html#buttons-toggle-buttons
+const rippleLightTheme = undefined; // i think default is this: TouchableNativeFeedback.Ripple('rgba(0, 0, 0, 0.12)', true); // https://material.io/guidelines/components/buttons.html#buttons-toggle-buttons
+
 class Button extends Component<Props, State> {
     state = {
         raisedElevation: new Animated.Value(2)
     }
 
     render() {
-        const { accessibilityLabel, animated, black, bordered, color, disabled, flat, loading, noBackground, onPress, testID, title } = this.props;
+        const { accessibilityLabel, animated, black, bordered, color, disabled, flat, lightRipple, loading, noBackground, onPress, testID, title } = this.props;
         const { raisedElevation } = this.state;
 
         const formattedTitle = title.toUpperCase();
@@ -175,7 +178,7 @@ class Button extends Component<Props, State> {
             if (animated) {
                 // button is elevation 6 when pressed per - https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android
                 return (
-                    <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} disabled={disabled || loading} onPress={onPress} onPressIn={this.raiseButton} onPressOut={this.dropButton} testID={testID}>
+                    <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} background={lightRipple ? rippleDarkTheme : ripleLightTheme} disabled={disabled || loading} onPress={onPress} onPressIn={this.raiseButton} onPressOut={this.dropButton} testID={testID}>
                         <Animated.View style={[buttonStyle, { elevation:raisedElevation }]}>
                             <Text style={textStyle} disabled={disabled || loading}>{formattedTitle}</Text>
                             { loading && <ActivityIndicator style={styles.activity} color={activityColor} size="small" /> }
@@ -187,7 +190,7 @@ class Button extends Component<Props, State> {
         }
 
         return (
-            <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} disabled={disabled || loading} onPress={onPress} testID={testID}>
+            <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} background={lightRipple ? rippleDarkTheme : ripleLightTheme} disabled={disabled || loading} onPress={onPress} testID={testID}>
                 <View style={buttonStyle}>
                     <Text style={textStyle} disabled={disabled || loading}>{formattedTitle}</Text>
                     { loading && <ActivityIndicator style={styles.activity} color={activityColor} size="small" /> }
