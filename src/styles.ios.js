@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
     textDefaultColorAndroid: {
         color: '#2196F3'
     },
+    textSmall: {
+        fontSize: 14
+    },
     buttonDisabled: Platform.select({
         android: {
             elevation: 0,
