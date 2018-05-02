@@ -16,6 +16,7 @@ type Props = {
     hasTVPreferredFocus?: boolean, // *(Apple TV only)* TV preferred focus (see documentation for the View component).
     noShadow?: boolean, // *(Android only)* by default it is elevated, if bordered OR disabled are true, then this has no effect as both of these force no shadow
     onPress: () => any,
+    small?: boolean,
     testID?: string, // Used to locate this view in end-to-end tests.
     title: string, // Text to display for blindness accessibility features
     transparent?: boolean // *(Android only)* iOS is always transparent. blocks/superceeds "bordered"
@@ -31,7 +32,7 @@ class Button extends Component<Props, State> {
     }
 
     render() {
-        const { accessibilityLabel, bold, bordered, color, disabled, hasTVPreferredFocus, noShadow, onPress, testID, title, transparent } = this.props;
+        const { accessibilityLabel, bold, bordered, color, disabled, hasTVPreferredFocus, noShadow, onPress, small, testID, title, transparent } = this.props;
         const { activeAnim } = this.state;
 
         const isIOS = Platform.OS === 'ios';
@@ -76,6 +77,7 @@ class Button extends Component<Props, State> {
         if (bordered && isIOS) {
             textStyles.push(styles.textBorderedIOS);
         }
+        if (small) textStyles.push(styles.textSmall);
 
         const formattedTitle = isAndroid ? title.toUpperCase() : title;
         const Touchable = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
