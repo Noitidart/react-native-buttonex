@@ -178,7 +178,7 @@ class Button extends Component<Props, State> {
             if (animated) {
                 // button is elevation 6 when pressed per - https://material.io/guidelines/material-design/elevation-shadows.html#elevation-shadows-elevation-android
                 return (
-                    <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} background={lightRipple ? rippleDarkTheme : ripleLightTheme} disabled={disabled || loading} onPress={onPress} onPressIn={this.raiseButton} onPressOut={this.dropButton} testID={testID}>
+                    <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} background={lightRipple ? rippleDarkTheme : rippleLightTheme} disabled={disabled || loading} onPress={onPress} onPressIn={this.raiseButton} onPressOut={this.dropButton} testID={testID}>
                         <Animated.View style={[buttonStyle, { elevation:raisedElevation }]}>
                             <Text style={textStyle} disabled={disabled || loading}>{formattedTitle}</Text>
                             { loading && <ActivityIndicator style={styles.activity} color={activityColor} size="small" /> }
@@ -190,7 +190,7 @@ class Button extends Component<Props, State> {
         }
 
         return (
-            <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} background={lightRipple ? rippleDarkTheme : ripleLightTheme} disabled={disabled || loading} onPress={onPress} testID={testID}>
+            <TouchableNativeFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} background={lightRipple ? rippleDarkTheme : rippleLightTheme} disabled={disabled || loading} onPress={onPress} testID={testID}>
                 <View style={buttonStyle}>
                     <Text style={textStyle} disabled={disabled || loading}>{formattedTitle}</Text>
                     { loading && <ActivityIndicator style={styles.activity} color={activityColor} size="small" /> }
