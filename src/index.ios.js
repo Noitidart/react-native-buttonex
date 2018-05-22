@@ -9,6 +9,7 @@ type Props = {
     accessibilityLabel?: string, // Text to display for blindness accessibility features
     bold?: boolean, // *(iOS only)* always bold on android, but on iOS default is not bold
     bordered?: boolean,
+    borderedActiveTextColor?: string, // default is white, only applies if bordered === true
     // bordered === false: Color of the text (iOS), or background color of the button (Android)
     // bordered === true: Color of the text and border and background on press (iOS), or color of the text and border of the button (Android)
     color?: string,
@@ -32,7 +33,7 @@ class Button extends Component<Props, State> {
     }
 
     render() {
-        const { accessibilityLabel, bold, bordered, color, disabled, hasTVPreferredFocus, noShadow, onPress, small, testID, title, transparent } = this.props;
+        const { accessibilityLabel, bold, bordered, borderedActiveTextColor, color, disabled, hasTVPreferredFocus, noShadow, onPress, small, testID, title, transparent } = this.props;
         const { activeAnim } = this.state;
 
         const isIOS = Platform.OS === 'ios';
@@ -88,7 +89,7 @@ class Button extends Component<Props, State> {
                     <Text style={textStyles} disabled={disabled}>{formattedTitle}</Text>
                     <TouchableWithoutFeedback accessibilityComponentType="button" accessibilityLabel={accessibilityLabel} accessibilityTraits={accessibilityTraits} disabled={disabled} hasTVPreferredFocus={hasTVPreferredFocus} onPress={onPress} onPressIn={this.activateIOS} onPressOut={this.deactivateIOS} testID={testID}>
                         <Animated.View style={[{opacity:activeAnim}, styles.buttonBorderedActiveIOS, color && { backgroundColor:color }]}>
-                            <Text style={[styles.text, styles.textBorderedActiveIOS, bold && styles.textBold]}>{formattedTitle}</Text>
+                            <Text style={[styles.text, styles.textBorderedActiveIOS, bold && styles.textBold, borderedActiveTextColor && { color:borderedActiveTextColor }]}>{formattedTitle}</Text>
                         </Animated.View>
                     </TouchableWithoutFeedback>
                 </View>
